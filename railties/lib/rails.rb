@@ -43,6 +43,12 @@ module Rails
     def configuration
       application.config
     end
+    alias_method :config, :configuration
+
+    # The object storing all secure credentials for the Rails environment
+    def secrets
+      application.secrets
+    end
 
     def backtrace_cleaner
       @backtrace_cleaner ||= begin
